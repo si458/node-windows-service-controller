@@ -3,15 +3,10 @@ var process = require('child_process'),
 
 module.exports = function(command, errorParser, successParser) {
 
-    console.log();
-    console.log(command.path + ' ' + command.args.join(' '));
-    console.log();
-
     var sc = process.spawn(command.path, command.args);
 
     var log = function(message) { 
         message = message.toString('utf8');
-        console.log(message); 
         return message;
     };
 
